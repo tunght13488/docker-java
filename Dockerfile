@@ -14,6 +14,3 @@ RUN ansible-playbook \
     site.yml
 
 RUN rm -rf /srv/ansible/java
-
-ENTRYPOINT ["/usr/bin/java"]
-CMD [ "-?" ]
