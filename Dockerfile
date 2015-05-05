@@ -1,4 +1,4 @@
-FROM tunght13488/buildpack-deps
+FROM tunght13488/buildpack-deps-scm
 MAINTAINER Tung Ha "tunght13488@gmail.com"
 
 ADD ansible /srv/ansible/java
