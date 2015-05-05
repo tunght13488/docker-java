@@ -1,0 +1,17 @@
+FROM tunght13488/buildpack-deps
+MAINTAINER Tung Ha "tunght13488@gmail.com"
+
+ADD ansible /srv/ansible/java
+WORKDIR /srv/ansible/java
+
+RUN ansible-galaxy install \
+    --role-file=roles.txt \
+    --roles-path=roles \
+    --force
+
+RUN ansible-playbook \
+    --connection=local \
+    site.yml
+
+ENTRYPOINT ["/usr/bin/java"]
+CMD [ "-?" ]
